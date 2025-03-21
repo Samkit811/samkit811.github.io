@@ -37,8 +37,8 @@ form.addEventListener('submit', async function (event) {
             "email": email
         });
 
-        // 🌍 WebEngage API Call (Sending all details)
-        const apiUrl = "https://api.webengage.com/v1/accounts/58b004c1/users";
+        //WebEngage API Call (Sending all details)
+        const apiUrl = "https://practice-backend-project.vercel.app/api/webengage";
         const apiKey = "125a0a5c-e32f-41fd-9a4f-0713a6ac575e";
 
         const userData = {
