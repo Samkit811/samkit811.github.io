@@ -54,11 +54,8 @@ form.addEventListener('submit', async function (event) {
             const response = await fetch(apiUrl, {
                 method: "POST",
                 headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Authorization": `Bearer ${apiKey}`,
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Methods": GET, POST, PUT, DELETE, OPTIONS,
-                    "Access-Control-Allow-Headers": Content-Type, Authorization
+                    "Authorization": `Bearer ${apiKey}`, 
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(userData),
             });
