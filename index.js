@@ -38,7 +38,7 @@ form.addEventListener('submit', async function (event) {
         });
 
         //WebEngage API Call (Sending all details)
-        const apiUrl = "https://api.webengage.com/v1/accounts/58b004c1/users";
+        const apiUrl = "https://practice-backend-project.vercel.app/api/webengage";
         const apiKey = "125a0a5c-e32f-41fd-9a4f-0713a6ac575e";
 
         const userData = {
@@ -57,6 +57,8 @@ form.addEventListener('submit', async function (event) {
                     "Access-Control-Allow-Origin": "*",
                     "Authorization": `Bearer ${apiKey}`,
                     "Content-Type": "application/json",
+                    "Access-Control-Allow-Methods": GET, POST, PUT, DELETE, OPTIONS,
+                    "Access-Control-Allow-Headers": Content-Type, Authorization
                 },
                 body: JSON.stringify(userData),
             });
