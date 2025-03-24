@@ -27,7 +27,7 @@ form.addEventListener('submit', async function (event) {
         console.log('Age:', age);
         console.log('City:', city);
 
-        // ✅ WebEngage SDK Calls (Only First Name, Last Name, and Email)
+        // WebEngage SDK Calls (Only First Name, Last Name, and Email)
         webengage.user.login(email);
         webengage.user.setAttribute('name', `${firstName} ${lastName}`.trim());
         webengage.user.setAttribute('email', email);
@@ -38,7 +38,7 @@ form.addEventListener('submit', async function (event) {
         });
 
         //WebEngage API Call (Sending all details)
-        const apiUrl = "https://practice-backend-project.vercel.app/api/webengage";
+        const apiUrl = "https://api.webengage.com/v1/accounts/58b004c1/users";
         const apiKey = "125a0a5c-e32f-41fd-9a4f-0713a6ac575e";
 
         const userData = {
@@ -54,6 +54,7 @@ form.addEventListener('submit', async function (event) {
             const response = await fetch(apiUrl, {
                 method: "POST",
                 headers: {
+                    "Access-Control-Allow-Origin": "*",
                     "Authorization": `Bearer ${apiKey}`,
                     "Content-Type": "application/json",
                 },
